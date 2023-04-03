@@ -4,29 +4,44 @@ Este projeto consiste nas respostas de um teste técnico realizado em Ruby on Ra
 
 ## Problemas / Soluções :heavy_check_mark:
 
-**1** - Escreva um método que dado um inteiro x, um inteiro y e um inteiro w retorne todos os números divisíveis por w entre x e y.
+**Questão 1** - O objetivo desta questão é escrever um método que receba uma lista de hashes e retorne um string. Considere o seguinte código:
+```
+input = [
+  { name: 'Maria Neusa de Aparecida',
+    cpf: '97905796671',
+    state: 'Sao Paulo',
+    value: '1234' },
+  { name: 'Ricardo Fontes',
+    cpf: '44010762900',
+    state: 'Rio Grande do Sul',
+    value: '567' }
+]
 
-[Solução]( https://github.com/joaogdfaero/teste_tecnico_rails_2/issues/1 )
+def solucao(arg)
+  # Retornar um string
+end
+```
 
-**2** - Em um sistema web, cada usuário pode se inscrever em diversos eventos, cada evento possui até 3 prêmios que são distribuídos entre os usuários presentes. O sistema precisa guardar a informação sobre quem participou de cada evento e quem ganhou os prêmios. Modele um banco de dados capaz de suportar essas regras.
+solucao(input) == "Maria Neusa97905796671Sao Paulo 1234 \nRicardo Fon44010762900Rio Grande 567
 
-[Solução]( https://github.com/joaogdfaero/teste_tecnico_rails_2/issues/3 )
+[Solução](  )
 
-**3** - Considere um sistema onde cada Usuário possui os atributos nome (String), idade (Inteiro) e profissão (String). Faça uma query que retorne o nome de todos os usuários com idade maior ou igual à 18 anos e cuja profissão seja programador ou desenvolvedor.
+**Questão 2** - O objetivo desta questão é estender a solução acima de modo que o formato do string retornado seja configurável.
 
-[Solução]( https://github.com/joaogdfaero/teste_tecnico_rails_2/issues/4 )
+Considere um arquivo yaml no seguinte modelo. As chaves de primeiro nível (name, cpf, etc) representam atributos do hash e não são fixas (quer dizer, elas podem diferir de um arquivo yaml para outro). As chaves de segundo nível são sempre as mesmas: length, align, e padding.
 
-**5** - Quais são as vantagens/desvantagens de se usar a arquitetura MVC (Model, View e Controller)?
+length: Com quantos caracteres deve ser formatado esse campo no output. Se o conteúdo do campo ultrapassar esse comprimento, ele deve ser truncado.
+align: Indica se o conteúdo do campo deve ser alinhado a esquerda ou a direita.
+padding: Caso o conteúdo do cammpo seja mais curto que a length especificada, o padding indica se o espaço restante deve ser preenchido com espaços em branco ou zero.
 
-[Solução]( https://github.com/joaogdfaero/teste_tecnico_rails_2/issues/6 )
+[Solução](  )
 
-**6** - Usando Ruby on Rails, cite pelo menos uma forma de criar uma rota para um método chamado find_user dentro de um controller com o nome UsersController.
+**Questão 3** - O objetivo desta questão é implementar a operação inversa da questão 2.
 
-[Solução]( https://github.com/joaogdfaero/teste_tecnico_rails_2/issues/7 )
+Isto é: escreva um método que recebe como argumento um string e retorna um hash. A forma como ele deve ler o string para extrair os valores é dada por um arquivo yaml como os da questão 2. Por exemplo, se seguirmos o arquivo “format-1.yaml”:
 
-**7** - Considerando a estrutura padrão de arquivos de um projeto feito com Ruby on Rails, em quais pastas devem se encontrar os models, os controllers e as views de um projeto? De que modo é possível saber qual controller é responsável por gerenciar uma determinada view?
+[Solução](  )
 
-[Solução]( https://github.com/joaogdfaero/teste_tecnico_rails_2/issues/8 )
 
 ## Tecnologias:
 
