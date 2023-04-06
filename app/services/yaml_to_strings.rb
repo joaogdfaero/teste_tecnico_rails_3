@@ -1,5 +1,6 @@
+
 class TesteTecnico
-  def hashs_to_string(arg)
+=begin  def hashs_to_string(arg)
     string = ''
     n = 11
 
@@ -22,6 +23,7 @@ class TesteTecnico
 # "Maria Neusa97905796671Sao Paulo   1234       \nRicardo Fon44010762900Rio Grande  567        "
     return string
   end
+=end
 end
 
 input =
@@ -36,7 +38,7 @@ input =
     value: '567' }
 ]
 
-teste = TesteTecnico.new
+#teste = TesteTecnico.new
 result = "Maria Neusa97905796671Sao Paulo   1234       \nRicardo Fon44010762900Rio Grande  567        "
 
 if result = teste.hashs_to_string(input)
