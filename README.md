@@ -20,9 +20,9 @@ input = [
 def solucao(arg)
   # Retornar um string
 end
-```
 
 solucao(input) == "Maria Neusa97905796671Sao Paulo 1234 \nRicardo Fon44010762900Rio Grande 567
+```
 
 [Solução](  )
 
