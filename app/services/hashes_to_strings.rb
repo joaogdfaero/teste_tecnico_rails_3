@@ -13,16 +13,12 @@ class TesteTecnico
           arg[i][:value] = arg[i][:value].ljust(n," ")
         end}
 
-      string << arg[i][:name][0..n-1] + arg[i][:cpf][0..n-1] + arg[i][:state][0..n-1] + ' ' + arg[i][:value][0..n-1]
+      string << arg[i][:name][0..n-1] + arg[i][:cpf][0..n-1] + arg[i][:state][0..n-1] + arg[i][:value][0..n-1]
 
       if i != (arg.length - 1)
-        string << ' \n'
+        string << "\n"
       end
     }
-
     return string
   end
 end
-
-
-

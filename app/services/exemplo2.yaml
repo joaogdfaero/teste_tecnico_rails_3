@@ -1,0 +1,15 @@
+# format-2.yaml
+cpf:
+  length: 14
+  align: right
+  padding: zeros
+name:
+  length: 8
+  align: right
+  padding: zeros
+value:
+  length: 14
+  align: left
+  padding: spaces
+
+ 

@@ -17,6 +17,6 @@ RSpec.describe TesteTecnico do
 
     teste = TesteTecnico.new
     result1 = teste.hashs_to_string(hashes1)
-    expect(result1).to eq("Maria Neusa97905796671Sao Paulo 1234 \nRicardo Fon44010762900Rio Grande 567 ")
+    expect(result1).to eq("Maria Neusa97905796671Sao Paulo  1234       \nRicardo Fon44010762900Rio Grande 567        ")
   end
 end
