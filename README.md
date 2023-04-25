@@ -47,7 +47,7 @@ Isto é: escreva um método que recebe como argumento um string e retorna um has
 
 ## Tecnologias:
 
-* Ruby ..
+* Ruby 3.0.2
 * Rails ...
 
 
