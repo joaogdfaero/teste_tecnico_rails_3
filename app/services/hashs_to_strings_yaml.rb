@@ -4,23 +4,28 @@ class TesteTecnico
 
   def hashs_to_string(arg)
      yaml_data = YAML.load_file('exemplo1.yaml')
-    string = ''
+     string = ''
     #n = 11
 
     # Como saber qual campo existe e qual não?
 
-    n_cpf = yaml_data['cpf']['length']
-    n_name = yaml_data['name']['length']
-    n_value = yaml_data['cpf']['length']
-     n_state = yaml_data['cpf']['state']
+     n_cpf = yaml_data.fetch('cpf', {})['length'] || 0
+     n_name = yaml_data.fetch('name', {})['length'] || 0
+     n_value = yaml_data.fetch('value', {})['length'] || 0
+     n_state = yaml_data.fetch('state', {})['length'] || 0
+
 
      puts arg
 
      (0..arg.length - 1).each { |i|
-       string << arg[i][:name][0..yaml_data['name']['length']-1]
+       string << arg[i][:name][0..n_name-1] + arg[i][:cpf][0..n_cpf-1] + arg[i][:state][0..n_state-1] + arg[i][:value][0..n_value-1]
+
+       if i != (arg.length - 1)
+         string << "\n"
+       end
        }
 
-     puts string
+     p string
 
 
 
