@@ -1,67 +1,66 @@
 #!/usr/bin/env ruby
 require 'yaml'
 class TesteTecnico
+  def initialize(arg)
+    @hashes = arg
+    @yamlconfig = YAML.load_file('exemplo1.yaml')
+  end
 
-  def hashs_to_string(arg)
-     yaml_data = YAML.load_file('exemplo1.yaml')
+  # REFATORA O CÓDIGO COM AS SUGESTÕES DO CHATGPT
+  def hashs_to_string
      string = ''
-    #n = 11
 
-    # Como saber qual campo existe e qual não?
+     n_name = @yamlconfig.fetch('name', {})['length'] || -100
+     n_cpf = @yamlconfig.fetch('cpf', {})['length'] || -100
+     n_state = @yamlconfig.fetch('state', {})['length'] || -100
+     n_value = @yamlconfig.fetch('value', {})['length'] || -100
+     n_arr = [n_name, n_cpf, n_state, n_value]
 
-     n_cpf = yaml_data.fetch('cpf', {})['length'] || 0
-     n_name = yaml_data.fetch('name', {})['length'] || 0
-     n_value = yaml_data.fetch('value', {})['length'] || 0
-     n_state = yaml_data.fetch('state', {})['length'] || 0
+     (0..@hashes.length - 1).each { |i|
 
+       (0..@hashes[0].length-1).each { |j|
+         if @hashes[i].to_a[j][1].length < n_arr[j]
+           if @yamlconfig.fetch('name', {})['align'] = 'left'
+             @hashes[i][:name] = @hashes[i][:name].ljust(n_arr[j]," ") if (@yamlconfig.fetch('name', {})['padding'] == 'spaces')
+             @hashes[i][:name] = @hashes[i][:name].ljust(n_arr[j],"0") if (@yamlconfig.fetch('name', {})['padding'] == 'zeroes')
+           else
+             @hashes[i][:name] = @hashes[i][:name].rjust(n_arr[j]," ") if (@yamlconfig.fetch('name', {})['padding'] == 'spaces')
+             @hashes[i][:name] = @hashes[i][:name].rjust(n_arr[j],"0") if (@yamlconfig.fetch('name', {})['padding'] == 'zeroes')
+           end
 
-     puts arg
+           if @yamlconfig.fetch('cpf', {})['align'] = "left"
+             @hashes[i][:cpf] = @hashes[i][:cpf].ljust(n_arr[j]," ") if (@yamlconfig.fetch('name', {})['padding'] == 'spaces')
+             @hashes[i][:cpf] = @hashes[i][:cpf].ljust(n_arr[j],"0") if (@yamlconfig.fetch('name', {})['padding'] == 'zeroes')
+           else
+             @hashes[i][:cpf] = @hashes[i][:cpf].rjust(n_arr[j]," ") if (@yamlconfig.fetch('name', {})['padding'] == 'spaces')
+             @hashes[i][:cpf] = @hashes[i][:cpf].rjust(n_arr[j],"0") if (@yamlconfig.fetch('name', {})['padding'] == 'zeroes')
+           end
 
-     (0..arg.length - 1).each { |i|
-       string << arg[i][:name][0..n_name-1] + arg[i][:cpf][0..n_cpf-1] + arg[i][:state][0..n_state-1] + arg[i][:value][0..n_value-1]
+           if @yamlconfig.fetch('state', {})['align'] = "left"
+             @hashes[i][:state] = @hashes[i][:state].ljust(n_arr[j]," ") if (@yamlconfig.fetch('name', {})['padding'] == 'spaces')
+             @hashes[i][:state] = @hashes[i][:state].ljust(n_arr[j],"0") if (@yamlconfig.fetch('name', {})['padding'] == 'zeroes')
+           else
+             @hashes[i][:state] = @hashes[i][:state].rjust(n_arr[j]," ") if (@yamlconfig.fetch('name', {})['padding'] == 'spaces')
+             @hashes[i][:state] = @hashes[i][:state].rjust(n_arr[j],"0") if (@yamlconfig.fetch('name', {})['padding'] == 'zeroes')
+           end
 
-       if i != (arg.length - 1)
+           if @yamlconfig.fetch('value', {})['align'] = "left"
+             @hashes[i][:value] = @hashes[i][:value].ljust(n_arr[j]," ") if (@yamlconfig.fetch('name', {})['padding'] == 'spaces')
+             @hashes[i][:value] = @hashes[i][:value].ljust(n_arr[j],"0") if (@yamlconfig.fetch('name', {})['padding'] == 'zeroes')
+           else
+             @hashes[i][:value] = @hashes[i][:value].rjust(n_arr[j]," ") if (@yamlconfig.fetch('name', {})['padding'] == 'spaces')
+             @hashes[i][:value] = @hashes[i][:value].rjust(n_arr[j],"0") if (@yamlconfig.fetch('name', {})['padding'] == 'zeroes')
+           end
+         end}
+
+       string << @hashes[i][:name][0..n_name-1] + @hashes[i][:cpf][0..n_cpf-1] + @hashes[i][:state][0..n_state-1] + @hashes[i][:value][0..n_value-1]
+
+       if i != (@hashes.length - 1)
          string << "\n"
        end
        }
 
      p string
-
-
-
-=begin
-    (0..arg.length - 1).each { |i|
-
-      (0..arg[0].length-1).each { |j|
-        if arg[i].to_a[j][1].length < yaml_data['name']['length']
-          arg[i][:name] = arg[i][:name].ljust(n," ")
-        end}
-
-      (0..arg[0].length-1).each { |j|
-        if arg[i].to_a[j][1].length < yaml_data['cpf']['length']
-          arg[i][:cpf] = arg[i][:cpf].ljust(n," ")
-        end}
-
-      (0..arg[0].length-1).each { |j|
-        if arg[i].to_a[j][1].length < yaml_data['state']['length']
-          arg[i][:state] = arg[i][:state].ljust(n," ")
-        end}
-
-      (0..arg[0].length-1).each { |j|
-        if arg[i].to_a[j][1].length < yaml_data['value']['length']
-          arg[i][:value] = arg[i][:value].ljust(n," ")
-        end}
-
-      string << arg[i][:name][0..yaml_data['name']['length']-1] + arg[i][:cpf][0..yaml_data['cpf']['length']-1] + arg[i][:state][0..yaml_data['state']['length']-1] + arg[i][:value][0..yaml_data['value']['length']-1]
-
-      if i != (arg.length - 1)
-        string << "\n"
-      end
-    }
-    #return string
-    p string
-
-=end
   end
 end
 
@@ -77,5 +76,5 @@ input =
       value: '567' }
   ]
 
-teste = TesteTecnico.new
-teste.hashs_to_string(input)
+teste = TesteTecnico.new(input)
+teste.hashs_to_string
