@@ -1,4 +1,6 @@
+require 'rspec'
 require_relative '/home/joao-desktop/Documents/GitHub/Testes Técnicos - Missão Vaga/teste_tecnico_rails_3/app/services/hashs_to_strings_yaml.rb'
+
 
 RSpec.describe TesteTecnico3 do
   it 'Teste 01: convertendo o primeiro conjunto de hashes' do
@@ -14,7 +16,7 @@ RSpec.describe TesteTecnico3 do
           value: '567' }
       ]
 
-    config_file_path = 'exemplo1.yaml'
+    config_file_path = '/home/joao-desktop/Documents/GitHub/Testes Técnicos - Missão Vaga/teste_tecnico_rails_3/app/services/exemplo1.yaml'
 
     teste = TesteTecnico3.new(hashes1, config_file_path)
     result1 = teste.hashs_to_string_yaml

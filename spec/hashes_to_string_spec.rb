@@ -1,6 +1,7 @@
+require 'rspec'
 require_relative '/home/joao-desktop/Documents/GitHub/Testes Técnicos - Missão Vaga/teste_tecnico_rails_3/app/services/hashes_to_strings.rb'
 
-RSpec.describe TesteTecnico do
+RSpec.describe TesteTecnico1 do
   it 'Teste 01: convertendo o primeiro conjunto de hashes' do
     hashes1 =
       [
@@ -14,7 +15,7 @@ RSpec.describe TesteTecnico do
           value: '567' }
       ]
 
-    teste = TesteTecnico.new
+    teste = TesteTecnico1.new
     result1 = teste.hashs_to_string(hashes1)
     expect(result1).to eq("Maria Neusa97905796671Sao Paulo  1234       \nRicardo Fon44010762900Rio Grande 567        ")
   end
