@@ -24,7 +24,7 @@ end
 solucao(input) == "Maria Neusa97905796671Sao Paulo 1234 \nRicardo Fon44010762900Rio Grande 567
 ```
 
-[Solução](  )
+[Solução](https://github.com/joaogdfaero/teste_tecnico_rails_3/issues/2)
 
 **Questão 2** - O objetivo desta questão é estender a solução acima de modo que o formato do string retornado seja configurável.
 
@@ -36,13 +36,13 @@ align: Indica se o conteúdo do campo deve ser alinhado a esquerda ou a direita.
 
 padding: Caso o conteúdo do cammpo seja mais curto que a length especificada, o padding indica se o espaço restante deve ser preenchido com espaços em branco ou zero.
 
-[Solução](  )
+[Solução](https://github.com/joaogdfaero/teste_tecnico_rails_3/issues/3)
 
 **Questão 3** - O objetivo desta questão é implementar a operação inversa da questão 2.
 
 Isto é: escreva um método que recebe como argumento um string e retorna um hash. A forma como ele deve ler o string para extrair os valores é dada por um arquivo yaml como os da questão 2. Por exemplo, se seguirmos o arquivo “format-1.yaml”:
 
-[Solução](  )
+[Solução](https://github.com/joaogdfaero/teste_tecnico_rails_3/issues/4)
 
 
 ## Tecnologias:
