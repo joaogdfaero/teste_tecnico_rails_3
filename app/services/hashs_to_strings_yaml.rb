@@ -30,27 +30,27 @@ class TesteTecnico3
           end
 
           if @config['cpf']['align'] = "left"
-            @data[i][:cpf] = @data[i][:cpf].ljust(n_arr[j], " ") if (@config.fetch('name', {})['padding'] == 'spaces')
-            @data[i][:cpf] = @data[i][:cpf].ljust(n_arr[j], "0") if (@config.fetch('name', {})['padding'] == 'zeroes')
+            @data[i][:cpf] = @data[i][:cpf].ljust(n_arr[j], " ") if (@config.fetch('cpf', {})['padding'] == 'spaces')
+            @data[i][:cpf] = @data[i][:cpf].ljust(n_arr[j], "0") if (@config.fetch('cpf', {})['padding'] == 'zeroes')
           else
-            @data[i][:cpf] = @data[i][:cpf].rjust(n_arr[j], " ") if (@config.fetch('name', {})['padding'] == 'spaces')
-            @data[i][:cpf] = @data[i][:cpf].rjust(n_arr[j], "0") if (@config.fetch('name', {})['padding'] == 'zeroes')
+            @data[i][:cpf] = @data[i][:cpf].rjust(n_arr[j], " ") if (@config.fetch('cpf', {})['padding'] == 'spaces')
+            @data[i][:cpf] = @data[i][:cpf].rjust(n_arr[j], "0") if (@config.fetch('cpf', {})['padding'] == 'zeroes')
           end
 
           if @config['state']['align'] = 'left'
-            @data[i][:state] = @data[i][:state].ljust(n_arr[j], " ") if (@config.fetch('name', {})['padding'] == 'spaces')
-            @data[i][:state] = @data[i][:state].ljust(n_arr[j], "0") if (@config.fetch('name', {})['padding'] == 'zeroes')
+            @data[i][:state] = @data[i][:state].ljust(n_arr[j], " ") if (@config.fetch('state', {})['padding'] == 'spaces')
+            @data[i][:state] = @data[i][:state].ljust(n_arr[j], "0") if (@config.fetch('state', {})['padding'] == 'zeroes')
           else
-            @data[i][:state] = @data[i][:state].rjust(n_arr[j], " ") if (@config.fetch('name', {})['padding'] == 'spaces')
-            @data[i][:state] = @data[i][:state].rjust(n_arr[j], "0") if (@config.fetch('name', {})['padding'] == 'zeroes')
+            @data[i][:state] = @data[i][:state].rjust(n_arr[j], " ") if (@config.fetch('state', {})['padding'] == 'spaces')
+            @data[i][:state] = @data[i][:state].rjust(n_arr[j], "0") if (@config.fetch('state', {})['padding'] == 'zeroes')
           end
 
           if @config['value']['align'] = 'left'
-            @data[i][:value] = @data[i][:value].ljust(n_arr[j], " ") if (@config.fetch('name', {})['padding'] == 'spaces')
-            @data[i][:value] = @data[i][:value].ljust(n_arr[j], "0") if (@config.fetch('name', {})['padding'] == 'zeroes')
+            @data[i][:value] = @data[i][:value].ljust(n_arr[j], " ") if (@config.fetch('value', {})['padding'] == 'spaces')
+            @data[i][:value] = @data[i][:value].ljust(n_arr[j], "0") if (@config.fetch('value', {})['padding'] == 'zeroes')
           else
-            @data[i][:value] = @data[i][:value].rjust(n_arr[j], " ") if (@config.fetch('name', {})['padding'] == 'spaces')
-            @data[i][:value] = @data[i][:value].rjust(n_arr[j], "0") if (@config.fetch('name', {})['padding'] == 'zeroes')
+            @data[i][:value] = @data[i][:value].rjust(n_arr[j], " ") if (@config.fetch('value', {})['padding'] == 'spaces')
+            @data[i][:value] = @data[i][:value].rjust(n_arr[j], "0") if (@config.fetch('value', {})['padding'] == 'zeroes')
           end
         end }
 
