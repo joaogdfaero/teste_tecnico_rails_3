@@ -34,7 +34,7 @@ Considere um arquivo yaml no seguinte modelo. As chaves de primeiro nível (name
 
 - align: Indica se o conteúdo do campo deve ser alinhado a esquerda ou a direita.
 
-- padding: Caso o conteúdo do cammpo seja mais curto que a length especificada, o padding indica se o espaço restante deve ser preenchido com espaços em branco ou zero.
+- padding: Caso o conteúdo do campo seja mais curto que a length especificada, o padding indica se o espaço restante deve ser preenchido com espaços em branco ou zero.
 
 [Solução](https://github.com/joaogdfaero/teste_tecnico_rails_3/issues/3)
 
